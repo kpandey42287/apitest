@@ -27,7 +27,6 @@ def test_02_verify_status_code_get_api():
     assert result.status_code == 200
     # verify that API returns only one record
     assert len(json_response) == 4
-    # verify the schema
     # verify that id in response matches the input (1)
     assert json_response['id'] == 1
 
@@ -52,10 +51,6 @@ def test_04_verify_post_service():
     # verify that status code is 201
     assert result.status_code == 201
 
-    # verify the schema
-
-    # verify the record created
-
 def test_05_veriry_put_service():
     request_url = "https://jsonplaceholder.typicode.com/posts/1"
     print("request_URL:[{}]".format(request_url))
@@ -68,10 +63,6 @@ def test_05_veriry_put_service():
     # verify that status code is 200
     assert result.status_code == 200
 
-    # verify the schema
-
-    # verify the record updated
-
 def test_06_verify_delete_service():
     request_url = "https://jsonplaceholder.typicode.com/posts/1"
     result = requests.delete(request_url)
@@ -80,4 +71,4 @@ def test_06_verify_delete_service():
     print("Response details : {}".format(result.text))
     # verify that status code is 200
     assert result.status_code == 200
-    # verify the response
+    
